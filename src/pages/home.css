@@ -1,0 +1,14 @@
+.home-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    width: 70%;
+    height: 800px;
+    margin-right: 15px;
+    margin-left: 15px;
+    border: 1px solid black;
+}

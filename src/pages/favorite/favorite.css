@@ -1,0 +1,11 @@
+.added-list{
+    width: 400px;
+    height: 670px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 10px 10px rgba(0.4,0.4,0.4,0.4);
+}

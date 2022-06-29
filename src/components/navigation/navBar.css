@@ -1,0 +1,16 @@
+nav{
+    background-color: #baced7;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link{
+    width: 70%;
+    margin-right: 15px;
+    margin-left: 15px;
+    /*border: 1px solid black;*/
+    height: 200px;
+}
+
