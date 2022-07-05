@@ -7,8 +7,10 @@ function Home() {
     return (
         <section className='home-body'>
             <div className='home'>
-                <p>welkome to home</p>
-                { isAuth ? <p>you are logged in</p> : <p>you are not logged in yet</p>}
+                <h1 className='home-text'>Welkom bij de filmclub</h1>
+                <p className='home-text'>Wil je weten of je favoriete film is gemaakt in een serie of is aangepast in een game? Het antwoord vind je hier.</p>
+
+                { isAuth ? <p className='home-text'><strong>je bent ingelogd</strong></p> : <p className='home-text'><strong>je bent niet ingelogd</strong></p>}
             </div>
         </section>
     );

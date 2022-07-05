@@ -25,7 +25,6 @@ function AuthContextProvider({ children }) {
                             "Authorization": `Bearer ${token}`,
                         }
                     })
-                    console.log(response.data);
                     setAuth({
                         isAuth: true,
                         user: {
@@ -53,7 +52,6 @@ function AuthContextProvider({ children }) {
     },[]);
 
     function login(jwt){
-        console.log('gebruiker is in gelogd');
         localStorage.setItem('token',jwt);
         const decode = jwtDecode(jwt);
         console.log(decode);
@@ -79,7 +77,6 @@ function AuthContextProvider({ children }) {
     }
 
     function registration(){
-        console.log('gebruiker is account gemaakt');
         setAuth({
             isAuth: false,
             user: null,

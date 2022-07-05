@@ -21,17 +21,15 @@ function Signup() {
                 role: role,
             });
             registration();
-            console.log(username,email,password);
         }catch (e) {
             console.error(e);
-            console.log('het is niet gelukt');
         }
     }
 
     return (
         <div className='register-body'>
             <div className='register'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='signup-form'>
                     <label htmlFor='email'>Email
                         <input
                             type='email'
@@ -39,6 +37,7 @@ function Signup() {
                             onChange={(e)=>setEmail(e.target.value)}
                             value={email}
                         />
+                        {!email.includes('@') && !email.includes('.') && <p>mail moet bevaat "@" en "."</p>}
                     </label>
                     <label htmlFor='username'>Username
                         <input
@@ -47,6 +46,7 @@ function Signup() {
                             onChange={(e)=>setUsername(e.target.value)}
                             value={username}
                         />
+                        {username === '' && <p>Dit is verplicht</p>}
                     </label>
                     <label htmlFor='password'>Password
                         <input
@@ -55,6 +55,7 @@ function Signup() {
                             onChange={(e)=>setPassword(e.target.value)}
                             value={password}
                         />
+                        {password.length < 6 && <p>minimaal 6 karakter</p>}
                     </label>
                     <button type='submit'>Registreren</button>
                 </form>

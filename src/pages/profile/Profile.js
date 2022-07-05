@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import axios from "axios";
 import Movie from "../../components/movies/Movie";
 import './profile.css';
@@ -13,26 +13,28 @@ function Profile() {
 
     async function mySelect(e) {
             e.preventDefault()
-        const token = localStorage.getItem('token');
 
         try {
-            const response = await axios.get(`http://www.omdbapi.com/?s=${film} wars&apikey=8f507077&y=${year}&type=${choose}`);
+            const response = await axios.get(`http://www.omdbapi.com/?s=${film}&apikey=8f507077&y=${year}&type=${choose}`);
             serShowMovie(response.data.Search);
         } catch (e) {
             console.error(e);
         }
     }
 
+    let storedMovie = [];
 
-
-    let storedMovie = movieList.find((e)=>{
-        return e.imdbID === showMovie.imdbID;
-    })
-
+    if(showMovie){
+        storedMovie = movieList.find((e)=>{
+            return e.imdbID === showMovie.imdbID;
+        })
+    }
     const movieListDisabled = storedMovie ? true : false;
+
 
     return (
         <div className='profile-body'>
+            {showMovie && (<div dangerouslySetInnerHTML={{__html: showMovie.render}}></div>)}
             <form onSubmit={mySelect} id='zoek-form'>
                 <label className='label-of-zoek'>Name of film
                     <input
@@ -63,6 +65,7 @@ function Profile() {
                 </label>
                 <button type='submit'>choose</button>
             </form>
+            <div className='listOfMovie'>
             {showMovie ? showMovie.map((value, index) => {
                 return <> {Object.keys(showMovie).length > 0  && <Movie
 
@@ -72,16 +75,12 @@ function Profile() {
                     year={value.Year}
                     type={value.Type}
                     movie={value}
-                />}<button
-                    type='button'
-                    disabled={movieListDisabled}
-                    onClick={()=> addMovies(value)}
-                >
-                    add to addList
-                </button></>
+                    movieListDisabled={movieListDisabled}
+                    addMovies={()=> addMovies(value)}
+                />}</>
             }) : <h1>er is geen information van u gekozen</h1>
             }
-
+            </div>
         </div>
     );
 }

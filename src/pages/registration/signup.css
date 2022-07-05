@@ -7,13 +7,16 @@
 
 .register{
     width: 70%;
-    height: 700px;
+    height: 850px;
     margin-right: 15px;
     margin-left: 15px;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.signup-form{
+    height: 650px;
 }
 

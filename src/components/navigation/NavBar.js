@@ -66,6 +66,9 @@ function NavBar() {
 
                 }
             </section>
+            <div id='thema'>
+                <h1>Movie club</h1>
+            </div>
         </nav>
     );
 }
