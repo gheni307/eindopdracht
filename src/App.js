@@ -1,5 +1,5 @@
 import './App.css';
-import NavBar from "./components/navigation/NavBar";
+import NavBar from "./pages/navigation/NavBar";
 import Home from "./pages/Home";
 import {Route, Switch} from "react-router-dom";
 import Signup from "./pages/registration/Signup";
