@@ -8,6 +8,7 @@ function Signup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] =useState('');
     const [role,setRole] = useState('');
+    const [error, setError] = useState('');
     const { registration } = useContext(AuthContext);
 
     async function handleSubmit(e) {
@@ -23,6 +24,7 @@ function Signup() {
             registration();
         }catch (e) {
             console.error(e);
+            setError(<p>Verkeerd ingevoerd (zie de juiste invoerprompt) of geprobeerd hetzelfde account te registreren.</p>);
         }
     }
 
@@ -56,6 +58,7 @@ function Signup() {
                             value={password}
                         />
                         {password.length < 6 && <p>minimaal 6 karakter</p>}
+                        {error}
                     </label>
                     <button type='submit'>Registreren</button>
                 </form>
