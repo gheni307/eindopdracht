@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './signIn.css'
 import {AuthContext} from "../../context/AuthContext";
 import axios from "axios";
@@ -10,7 +10,9 @@ function SignIn() {
     const { login } = useContext(AuthContext);
 
     async function handleSubmit(e){
-        e.preventDefault();
+        if (e && e.preventDefault) {
+            e.preventDefault();
+        }
         try{
             const result = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin',{
                 username: username,
@@ -23,6 +25,9 @@ function SignIn() {
             setError(<p>username of password is niet klopt</p>);
         }
     }
+    useEffect(()=>{
+        handleSubmit();
+    },[])
     return (
         <div className='signIn-body'>
             <div className='signIn'>

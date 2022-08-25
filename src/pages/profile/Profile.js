@@ -66,10 +66,10 @@ function Profile() {
                 <button type='submit'>choose</button>
             </form>
             <div className='listOfMovie'>
-            {showMovie ? showMovie.map((value, index) => {
-                return <> {Object.keys(showMovie).length > 0  && <Movie
-
-                    key={index}
+            {showMovie ? showMovie.map((value) => {
+                return <> {<Movie
+                    myKey={value.imdbID}
+                    key={value.imdbID}
                     image={value.Poster}
                     name={value.Title}
                     year={value.Year}

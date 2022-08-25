@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import './signup.css'
 import {AuthContext} from "../../context/AuthContext";
 import axios from "axios";
@@ -12,7 +12,9 @@ function Signup() {
     const { registration } = useContext(AuthContext);
 
     async function handleSubmit(e) {
-        e.preventDefault();
+        if (e && e.preventDefault) {
+            e.preventDefault();
+        }
         setRole('user');
         try{
             await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signup`,{
@@ -27,6 +29,10 @@ function Signup() {
             setError(<p>Verkeerd ingevoerd (zie de juiste invoerprompt) of geprobeerd hetzelfde account te registreren.</p>);
         }
     }
+
+    useEffect(()=>{
+        handleSubmit();
+    },[])
 
     return (
         <div className='register-body'>

@@ -1,9 +1,10 @@
 import React from 'react';
 import './movie.css';
 
-function Movie({image, name, year, type, key, movieListDisabled, addMovies}) {
+function Movie({image, name, year, type, myKey, movieListDisabled, addMovies}) {
     return (
-        <div className='select-movie' key={key}>
+        <div className='select-movie'>
+            {console.log(myKey)}
             <h3>{name}</h3>
             <h3>{year}</h3>
             <h3>{type}</h3>
