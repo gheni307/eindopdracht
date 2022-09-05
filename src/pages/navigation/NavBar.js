@@ -33,19 +33,19 @@ function NavBar() {
                         type="button"
                         onClick={logout}
                     >
-                        log out
+                            uitloggen
                     </button>
                         <button
                             type="button"
                             onClick={profile}
                         >
-                            profile
+                            profiel
                         </button>
                         <button
                             type="button"
                             onClick={favorite}
                         >
-                            favorite
+                            favorieten
                         </button>
                     </>
                      :

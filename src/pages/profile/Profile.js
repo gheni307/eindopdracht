@@ -36,7 +36,7 @@ function Profile() {
         <div className='profile-body'>
             {showMovie && (<div dangerouslySetInnerHTML={{__html: showMovie.render}}></div>)}
             <form onSubmit={mySelect} id='zoek-form'>
-                <label className='label-of-zoek'>Name of film
+                <label className='label-of-zoek'>Naam van film
                     <input
                         type='text'
                         id='film'
@@ -44,7 +44,7 @@ function Profile() {
                         value={film}
                     />
                 </label>
-                <label className='label-of-zoek'>Year
+                <label className='label-of-zoek'>Jaar
                     <input
                         type='number'
                         id='year'
@@ -63,7 +63,7 @@ function Profile() {
                         <option value={`game`}>game</option>
                     </select>
                 </label>
-                <button type='submit'>choose</button>
+                <button type='submit'>Kiezen</button>
             </form>
             <div className='listOfMovie'>
             {showMovie ? showMovie.map((value) => {

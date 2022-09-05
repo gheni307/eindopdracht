@@ -32,7 +32,7 @@ function SignIn() {
         <div className='signIn-body'>
             <div className='signIn'>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor='username'>Username
+                    <label htmlFor='username'>Gebruikersnaam
                         <input
                             type='text'
                             id='username'
@@ -41,7 +41,7 @@ function SignIn() {
                         />
                         {username === '' && <p>Dit is verplicht</p>}
                     </label>
-                    <label htmlFor='password'>Password
+                    <label htmlFor='password'>Wachtwoord
                         <input
                             type='password'
                             id='password'

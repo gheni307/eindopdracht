@@ -68,6 +68,7 @@ function AuthContextProvider({ children }) {
     }
 
     function logout(){
+        localStorage.setItem('token',null);
         setAuth({
             isAuth: false,
             user: null,
@@ -75,26 +76,12 @@ function AuthContextProvider({ children }) {
         });
         history.push('/');
     }
-
-    function registration(){
-        setAuth({
-            isAuth: false,
-            user: null,
-            status: 'done',
-        });
-        history.push('/');
-    }
-
-
-
-
 
     const data={
         isAuth: isAuth.isAuth,
         user: isAuth.user,
         login: login,
         logout: logout,
-        registration: registration,
     }
 
     return (

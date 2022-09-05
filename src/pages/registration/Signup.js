@@ -9,7 +9,7 @@ function Signup() {
     const [password, setPassword] =useState('');
     const [role,setRole] = useState('');
     const [error, setError] = useState('');
-    const { registration } = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
 
     async function handleSubmit(e) {
         if (e && e.preventDefault) {
@@ -23,7 +23,7 @@ function Signup() {
                 password: password,
                 role: role,
             });
-            registration();
+            logout();
         }catch (e) {
             console.error(e);
             setError(<p>Verkeerd ingevoerd (zie de juiste invoerprompt) of geprobeerd hetzelfde account te registreren.</p>);
@@ -47,7 +47,7 @@ function Signup() {
                         />
                         {!email.includes('@') && !email.includes('.') && <p>mail moet bevaat "@" en "."</p>}
                     </label>
-                    <label htmlFor='username'>Username
+                    <label htmlFor='username'>Gebruikersnaam
                         <input
                             type='text'
                             id='username'
@@ -56,7 +56,7 @@ function Signup() {
                         />
                         {username === '' && <p>Dit is verplicht</p>}
                     </label>
-                    <label htmlFor='password'>Password
+                    <label htmlFor='password'>Wachtwoord
                         <input
                             type='password'
                             id='password'

@@ -14,7 +14,7 @@ function Movie({image, name, year, type, myKey, movieListDisabled, addMovies}) {
                 disabled={movieListDisabled}
                 onClick={addMovies}
             >
-                add to addList
+                toevoegen aan favorieten
             </button>
         </div>
     );
