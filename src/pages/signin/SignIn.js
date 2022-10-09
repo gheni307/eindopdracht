@@ -22,7 +22,7 @@ function SignIn() {
             console.log(result.data)
         }catch (e) {
             console.error(e);
-            setError(<p>username of password is niet klopt</p>);
+            setError(<p className='textIn'>username of password is niet klopt</p>);
         }
     }
     useEffect(()=>{
@@ -39,7 +39,7 @@ function SignIn() {
                             onChange={(e)=>setUsername(e.target.value)}
                             value={username}
                         />
-                        {username === '' && <p>Dit is verplicht</p>}
+                        {username === '' && <p className='textIn'>Dit is verplicht</p>}
                     </label>
                     <label htmlFor='password'>Wachtwoord
                         <input
@@ -48,7 +48,7 @@ function SignIn() {
                             onChange={(e)=>setPassword(e.target.value)}
                             value={password}
                         />
-                        {password.length < 6 && <p>minimaal 6 karakter</p>}
+                        {password.length < 6 && <p className='textIn'>minimaal 6 karakter</p>}
                         {error}
                     </label>
                     <button type='submit'>Inloggen</button>

@@ -8,6 +8,7 @@ import Profile from "./pages/profile/Profile";
 import {useContext} from "react";
 import {AuthContext} from "./context/AuthContext";
 import Favorite from "./pages/favorite/Favorite";
+import Footer from "./pages/footer/Footer";
 
 function App() {
   const { isAuth } = useContext(AuthContext);
@@ -31,6 +32,7 @@ function App() {
             <Favorite/>
           </Route> }
         </Switch>
+      <Footer/>
     </div>
   );
 }

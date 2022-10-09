@@ -1,11 +1,13 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import './navBar.css'
 import {useHistory} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
+import FilmFoto from "../../components/filmfoto/FilmFoto";
 
 function NavBar() {
     const history = useHistory();
     const {isAuth, logout} = useContext(AuthContext);
+
     function home(){
         history.push('/')
     }
@@ -65,10 +67,12 @@ function NavBar() {
                     </>
 
                 }
+                <FilmFoto id='foto1' foto="../film.jpg"/>
             </section>
             <div id='thema'>
                 <h1>Movie club</h1>
             </div>
+
         </nav>
     );
 }

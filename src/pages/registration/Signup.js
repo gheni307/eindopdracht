@@ -26,7 +26,7 @@ function Signup() {
             logout();
         }catch (e) {
             console.error(e);
-            setError(<p>Verkeerd ingevoerd (zie de juiste invoerprompt) of geprobeerd hetzelfde account te registreren.</p>);
+            setError(<p className='textUp'>Verkeerd ingevoerd (zie de juiste invoerprompt) of geprobeerd hetzelfde account te registreren.</p>);
         }
     }
 
@@ -45,7 +45,7 @@ function Signup() {
                             onChange={(e)=>setEmail(e.target.value)}
                             value={email}
                         />
-                        {!email.includes('@') && !email.includes('.') && <p>mail moet bevaat "@" en "."</p>}
+                        {!email.includes('@') && !email.includes('.') && <p className='textUp'>mail moet bevaat "@" en "."</p>}
                     </label>
                     <label htmlFor='username'>Gebruikersnaam
                         <input
@@ -54,7 +54,7 @@ function Signup() {
                             onChange={(e)=>setUsername(e.target.value)}
                             value={username}
                         />
-                        {username === '' && <p>Dit is verplicht</p>}
+                        {username === '' && <p className='textUp'>Dit is verplicht</p>}
                     </label>
                     <label htmlFor='password'>Wachtwoord
                         <input
@@ -63,7 +63,7 @@ function Signup() {
                             onChange={(e)=>setPassword(e.target.value)}
                             value={password}
                         />
-                        {password.length < 6 && <p>minimaal 6 karakter</p>}
+                        {password.length < 6 && <p className='textUp'>minimaal 6 karakter</p>}
                         {error}
                     </label>
                     <button type='submit'>Registreren</button>
