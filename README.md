@@ -26,7 +26,7 @@
 
     a. Om dit applicatie te gebruiken, je moet een account registreren.
 
-   <img height="400" src="public/registreren.png" width="400"/>
+   <img height="400" src="public/registreren.png" width="500"/>
 
     b. Om dit applicatie te gebruiken, je moet je account inloggen.
 
